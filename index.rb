@@ -35,7 +35,9 @@ class Game
 
 end
 
-game = Game.new("amazing")
+puts "What is the secret word? "
+secret_word = gets.chomp.downcase
+
+game = Game.new(secret_word)
+
 game.play
-#game.guesses << "a"
-#game.display
