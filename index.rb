@@ -1,31 +1,35 @@
 class Game
-  attr_accessor :guess
+  attr_accessor :guesses
   def initialize(word)
     @target_word = word.split("")
-    @guess = []
+    @guesses = []
     @current_word = "_"
   end
 
   def display
     @current_word = ""
     @target_word.each do |letter|
-      @guess.include?(letter) ? @current_word += "#{letter} " : @current_word += "_ "
+      @guesses.include?(letter) ? @current_word += "#{letter} " : @current_word += "_ "
     end
 
     puts @current_word
+    print guesses
+    puts
   end
 
   def play
     while @current_word.include?("_")
       print "Guess a letter: "
-      @guess << gets.chomp
+      @guesses << gets.chomp
       display
     end
+
+    puts "You won!"
   end
 
 end
 
 game = Game.new("amazing")
 game.play
-#game.guess << "a"
+#game.guesses << "a"
 #game.display
