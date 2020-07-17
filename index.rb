@@ -30,7 +30,7 @@ class Game
       display
     end
 
-    puts "You won!"
+    puts "/******/\nYou won!\n/******/"
   end
 
 end
